@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ParticipantZoneComponent } from './participant-zone.component';
+import {ParticipantZoneComponent} from './participant-zone.component';
 
 describe('ParticipantZoneComponent', () => {
   let component: ParticipantZoneComponent;
@@ -8,9 +8,9 @@ describe('ParticipantZoneComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ParticipantZoneComponent ]
+      declarations: [ParticipantZoneComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

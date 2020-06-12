@@ -1,20 +1,19 @@
 
-
 .bgimg {
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    
-    background-image: url("./assets/header.jpg");
-    min-height: 70%;
-  }
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
 
-  .logoimg {
-    background-position: center;
-    background-size: cover;
-    position: fixed;
-    align-self: left;
-    background-image: url("./assets/logo.jpeg");
-    height: 150px;
-    width: 120px;
-  }
+  background-image: url("./assets/header.jpg");
+  min-height: 70%;
+}
+
+.logoimg {
+  background-position: center;
+  background-size: cover;
+  position: fixed;
+  align-self: left;
+  background-image: url("./assets/logo.jpeg");
+  height: 150px;
+  width: 120px;
+}
