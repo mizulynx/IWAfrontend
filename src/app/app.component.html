@@ -12,10 +12,11 @@
       </div>
     </div>
     <div class="w3-col s3">
-      <a [routerLink]="['/participantzone']" class="w3-button w3-block w3-black">PARTICIPANT ZONE</a>
+      <a *ngIf="authority === 'user'"[routerLink]="['/participantzone']" class="w3-button w3-block w3-black">PARTICIPANT ZONE</a>
+      <a *ngIf="authority === 'admin'" [routerLink]="['/admin']"> admin page</a>
     </div>
     <div class="w3-col s3">
-      <a [routerLink]="['/login']" class="w3-button w3-block w3-black">LOGIN</a>
+      <a [routerLink]="['/auth/login']" class="w3-button w3-block w3-black">LOGIN</a>
     </div>
   </div>
 </div>

@@ -1,6 +1,7 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {StartComponent} from './start/start.component';
@@ -10,6 +11,10 @@ import {PlanComponent} from './plan/plan.component';
 import {DataComponent} from './data/data.component';
 import {GoogleMapsModule} from '@angular/google-maps';
 import {LoginComponent} from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+import { UserComponent } from './user/user.component';
+import { RegisterComponent } from './register/register.component';
+import { httpInterceptorProviders } from './auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -19,14 +24,18 @@ import {LoginComponent} from './login/login.component';
     RulesComponent,
     PlanComponent,
     DataComponent,
-    LoginComponent
+    LoginComponent,
+    AdminComponent,
+    UserComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    GoogleMapsModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule {
