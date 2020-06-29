@@ -9,12 +9,13 @@ import {ParticipantZoneComponent} from './participant-zone/participant-zone.comp
 import {RulesComponent} from './rules/rules.component';
 import {PlanComponent} from './plan/plan.component';
 import {DataComponent} from './data/data.component';
-import {GoogleMapsModule} from '@angular/google-maps';
 import {LoginComponent} from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { UserComponent } from './user/user.component';
 import { RegisterComponent } from './register/register.component';
 import { httpInterceptorProviders } from './auth-interceptor';
+import { ArtistComponent } from './artist/artist.component';
+import { ArtistListComponent } from './artist-list/artist-list.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { httpInterceptorProviders } from './auth-interceptor';
     LoginComponent,
     AdminComponent,
     UserComponent,
-    RegisterComponent
+    RegisterComponent,
+    ArtistComponent,
+    ArtistListComponent
   ],
   imports: [
     BrowserModule,

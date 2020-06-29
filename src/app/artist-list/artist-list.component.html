@@ -1,0 +1,25 @@
+<script>
+    $('.ui.dropdown')
+      .dropdown();
+  
+  </script>
+  <br><br>
+  <div class="eight wide column">
+    <br>
+    <div class="ui action input" style="float:right">
+      <input type="text" placeholder="Search by artist" (blur)="searchArt=searchedArtist.value" #searchedArtist>
+      <button class="ui button" (click)="artists = search(); searchArt=searchedArtist.value">Search</button>
+    </div>
+  </div>
+  <br>
+  <div class="ui inverted segment">
+    <button class="ui inverted violet basic button" (click)="filteredValue='Rock'; artists = filteredGenre()">Rock </button>
+    <button class="ui inverted purple basic button" (click)="filteredValue='Pop'; artists = filteredGenre()">Pop</button>
+    <button class="ui inverted pink basic button" (click)="filteredValue='Electro'; artists = filteredGenre()">Electro</button>
+    <button class="ui button" (click)="filteredValue=null; artists = filteredGenre()">All bands</button>
+  </div>
+  <div class="container">
+    <div class="row">
+      <app-artist *ngFor="let artist of artists" [artist]="artist"> </app-artist>
+    </div>
+</div>

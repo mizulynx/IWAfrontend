@@ -17,3 +17,10 @@
   height: 150px;
   width: 120px;
 }
+
+.artist{
+  background: -webkit-linear-gradient(purple, darkblue, silver, red);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
