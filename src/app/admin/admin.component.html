@@ -1,1 +1,6 @@
-<p>admin works!</p>
+<ul>
+    <li *ngFor="let room of roomList">
+      <span class="badge">{{room.id}}</span> {{ room.capacity }} {{room.user_id}}
+      <button title="delete" (click)="delete(room)">Delete</button>
+    </li>
+  </ul>
