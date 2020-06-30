@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from './token-storage.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,7 @@ import { TokenStorageService } from './token-storage.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  info: any;
   title = 'iwa-http-contacts';
   private roles: string[];
   public authority: string;
@@ -25,5 +27,15 @@ export class AppComponent implements OnInit {
         return true;
       });
     }
+      this.info = {
+        token: this.tokenStorage.getToken(),
+        username: this.tokenStorage.getUsername(),
+        authorities: this.tokenStorage.getAuthorities()
+      };
   }
-}
+    logout() {
+      this.tokenStorage.signOut();
+      window.location.reload();
+    }
+  }
+

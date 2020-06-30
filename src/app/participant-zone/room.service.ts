@@ -13,7 +13,7 @@ const httpOptions = {
     providedIn: 'root'
   })
 
-  export class HotelService {
+  export class RoomService {
 
     private roomUrl = 'http://localhost:8080/restApi/rooms';
 
@@ -21,22 +21,14 @@ const httpOptions = {
   constructor(private http: HttpClient) {
 }
 
-getRooms(): Observable < Room[] > {
-  return this.http.get<Room[]>(this.roomUrl);
-}
 
 
-
-delete(room: Room | number): Observable<Room> {
-  const id = typeof room === 'number' ? room : room.id;
-  const url = `${this.roomUrl}/${id}`;
-
-  return this.http.delete<Room>(url, httpOptions).pipe(
-    tap(_ => this.log(`deleted room id=${id}`)),
-    catchError(this.handleError<Room>('deleteRoom'))
-  );
-}
-
+addRoom(room: Room): Observable<Room> {
+    return this.http.post<Room>(this.roomUrl, room, httpOptions).pipe(
+      tap((roomAdded: Room) => this.log(`added room id=${roomAdded.id}`)),
+      catchError(this.handleError<Room>('addRoom'))
+    );
+  }
 
 
 private log(message: string) {

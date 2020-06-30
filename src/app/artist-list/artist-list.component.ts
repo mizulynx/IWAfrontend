@@ -14,7 +14,7 @@ export class ArtistListComponent implements OnInit {
   filteredValue: string;
   searchArt: string;
   constructor() {
-    const korn = new ArtistModel('KORN', 'Rock', './assets/RedHotChiliPeppers.jpg');
+    const korn = new ArtistModel('KORN', 'Rock', './assets/korn.jpg');
     const crx = new ArtistModel('CRX','Pop', './assets/RedHotChiliPeppers.jpg');
     const tigr3 = new ArtistModel('TIGR3', 'Electro', './assets/RedHotChiliPeppers.jpg');
     const rammstein = new ArtistModel('RAMMSTEIN', 'Metal', './assets/RedHotChiliPeppers.jpg');

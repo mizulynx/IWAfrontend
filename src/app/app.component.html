@@ -9,12 +9,12 @@
         <a [routerLink]="['/plan']" class="w3-bar-item w3-button">plan</a>
         <a [routerLink]="['/rules']" class="w3-bar-item w3-button">rules</a>
         <a [routerLink]="['/data']" class="w3-bar-item w3-button">data</a>
-        <a *ngIf="authority" [routerLink]="['/artist']" class="w3-button w3-block w3-black ">ARTISTS</a>
+        <a *ngIf="authority" [routerLink]="['/artist']" class="w3-bar-item w3-button ">ARTISTS</a>
       </div>
     </div>
     <div class="w3-col s3">
       <a *ngIf="authority === 'user'"[routerLink]="['/participantzone']" class="w3-button w3-block w3-black">PARTICIPANT ZONE</a>
-      <a *ngIf="authority === 'admin'" [routerLink]="['/admin']"> admin page</a>
+      <a *ngIf="authority === 'admin'" [routerLink]="['/admin']" class="w3-button w3-block w3-black"> Admin Page</a>
     </div>
     
     <div class="w3-col s3">
@@ -24,13 +24,13 @@
       <a *ngIf="!authority" [routerLink]="['/artist']" class="w3-button w3-block w3-black">ARTISTS</a>
     </div>
     <div class="w3-col s3">
-      <a *ngIf="authority" [routerLink]="['/artist']" class="w3-button w3-block w3-black">Logout</a>
+      <a *ngIf="authority" [routerLink]="['/start']" class="w3-button w3-block w3-black" (click)="logout()">Logout</a>
     </div>
   </div>
 </div>
 <header class="bgimg w3-display-container w3-grayscale-min">
   <div class="w3-display-middle w3-center">
-    <span class="w3-text-white" style="font-size:90px;">SNEPO<br>CON</span>
+    <span class="w3-text-white" style="font-size:90px;">SNEPOCON</span>
   </div>
 </header>
 
@@ -41,10 +41,6 @@
 </div>
 
 
-<footer class="w3-display-container" style="background-color: rgb(52, 52, 52);">
-  <div class="logo" style="flex-direction: row; display: flex;">
-    <img class="logoimg">
-    <p>Jakub <br> Borkowski <br>Snepocon</p>
-  </div>
+<footer class="w3-display-container" style="background-color: rgb(14, 237, 253);   position: fixed; bottom: 0; right: 0;width: 100%;">
   <p style="text-align: center;">Created by MizuLynx</p>
 </footer>

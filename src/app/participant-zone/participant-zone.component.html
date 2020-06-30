@@ -1,0 +1,48 @@
+<div class="w3-card-4 w3-center w3-display-middle w3-padding-top-32 w3-blue-gray w3-padding-16"
+style="width:min-content;" *ngIf="reserved == true; else reserve">
+
+</div>
+
+<ng-template #reserve>
+
+    <div class="w3-row w3-margin">
+        <div class="w3-col w3-border link-container" style="width: 30%; margin-right: 16px; height: 500px;">
+          <h1 style="padding: 10px 10px 10px 10px;">SOLO PACK </h1>
+          <p style="padding: 10px 10px 10px 10px;"> Do you want to meet new friends but silence your thoughts in room. Take this single room!<p>
+          <div>
+            <div class="grad"></div>
+            <a  class="link">buy</a>
+      
+          </div>
+        </div>
+        <div class="w3-col w3-border link-container " style="width: 30%; margin-right: 16px; height: 500px;">
+          <h1 style="padding: 10px 10px 10px 10px;">Dual </h1>
+          <p style="padding: 10px 10px 10px 10px;">party with partner? Or your Best friend? buy double room! </p>
+          <div>
+            <div class="grad"></div>
+            <a  class="link">buy</a>
+          </div>
+        </div>
+        <div class="w3-col w3-border link-container" style="width: 30%; margin: auto; height: 500px;">
+          <h1 style="padding: 10px 10px 10px 10px;">Become musician. </h1>
+          <p style="padding: 10px 10px 10px 10px;">Do you have soul of artist? During convent you can learn playing an
+            instrument and at the end of it you will
+            play with your band.</p>
+          <div>
+            <div class="grad"></div>
+            <a [routerLink]="['/data']" class="link">show plan</a>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+</ng-template>
