@@ -1,6 +1,5 @@
 import { ArtistComponent } from './artist/artist.component';
 import { RegisterComponent } from './register/register.component';
-import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
 import { RulesComponent } from './rules/rules.component';
 import { DataComponent } from './data/data.component';
@@ -10,6 +9,8 @@ import { StartComponent } from './start/start.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ArtistListComponent } from './artist-list/artist-list.component';
+import { UserComponent } from './user/user.component';
+import { ParticipantComponent } from './participant/participant.component';
 
 
 const routes: Routes = [
@@ -20,9 +21,9 @@ const routes: Routes = [
   { path: 'rules', component: RulesComponent },
   { path: 'auth/login', component: LoginComponent },
   { path: 'auth/signup', component: RegisterComponent },
-  { path: 'admin', component: AdminComponent },
   {path: 'participantzone', component: ParticipantZoneComponent},
-  {path: 'artist', component: ArtistListComponent}
+  {path: 'artist', component: ArtistListComponent},
+  {path: 'participant', component: ParticipantComponent}
 ];
 
 @NgModule({

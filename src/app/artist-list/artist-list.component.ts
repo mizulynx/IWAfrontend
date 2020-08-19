@@ -1,34 +1,31 @@
-import { ArtistModel } from './../artist/artist.model';
+import {  Artist } from './../artist/artist.model';
 import { Component, OnInit } from '@angular/core';
+import { ArtistListService } from './artist-list.service';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @Component({
   selector: 'app-artist-list',
   templateUrl: './artist-list.component.html',
-  styleUrls: ['./artist-list.component.scss']
+  styleUrls: ['./artist-list.component.scss'],
+  providers: [ArtistListService]
 })
 export class ArtistListComponent implements OnInit {
 
-  artists: ArtistModel[];
-  addart: ArtistModel[];
+  artists: Artist[];
+  addart: Artist[];
   filteredValue: string;
   searchArt: string;
-  constructor() {
-    const korn = new ArtistModel('KORN', 'Rock', './assets/korn.jpg');
-    const crx = new ArtistModel('CRX','Pop', './assets/RedHotChiliPeppers.jpg');
-    const tigr3 = new ArtistModel('TIGR3', 'Electro', './assets/RedHotChiliPeppers.jpg');
-    const rammstein = new ArtistModel('RAMMSTEIN', 'Metal', './assets/RedHotChiliPeppers.jpg');
-    const ira = new ArtistModel('IRA','Rock', './assets/RedHotChiliPeppers.jpg');
-    const maroon5 = new ArtistModel('MARRON5', 'Pop', './assets/RedHotChiliPeppers.jpg');
-    this.artists = [
-      korn, crx, tigr3, rammstein, ira, maroon5
-    ];
-    this.addart = this.artists;
+  constructor(private artistListService: ArtistListService) {
+    this.getArtist();
   }
 
   ngOnInit(): void {
+this.getArtist();
+    console.log(this.artists);
   }
-  filteredGenre(): ArtistModel[]{
+
+  filteredGenre(): Artist[]{
       this.artists = this.addart;
     if (this.filteredValue == null) {
       return this.artists;
@@ -37,13 +34,59 @@ export class ArtistListComponent implements OnInit {
   }
 
 
-  search(): ArtistModel[]{
+  search(): Artist[]{
     this.artists = this.addart;
-    console.log(artist=> artist.name);
+    console.log(artist=> artist.band);
     console.log(this.searchArt);
-    console.log(this.artists.filter(artist => artist.name === this.searchArt.toUpperCase()))
-    return this.artists.filter(artist => artist.name == this.searchArt.toUpperCase());
+    console.log(this.artists.filter(artist => artist.band === this.searchArt.toUpperCase()))
+    return this.artists.filter(artist => artist.band == this.searchArt.toUpperCase());
+
+  }
+add(band:string, genre:string, votes: number, approved: number ) : void{
+  band = band.trim();
+  genre = genre.trim();
+  votes = votes;
+  approved = approved;
+  this.artistListService.addArtist({band, genre, votes, approved} as Artist).subscribe(artist => {this.artists.push(artist);},
+    error1 => {},
+    () => {},
+  );
+    
+}
+
+  
+
+  getArtist(): void{
+    this.artistListService.getArtist().subscribe(artists => this.artists = artists);
+  }
 
   }
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

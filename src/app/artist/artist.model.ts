@@ -1,11 +1,15 @@
-export class ArtistModel {
-    name: string;
-    genre: string
-    picturePath: string
+export class Artist {
+    band: string;
+    genre: string;
+    id: any;
+    votes: number;
+    approved: number;
 
-    constructor(name: string, genre: string, picturePath: string) {
-      this.name = name;
+    constructor(band: string, genre: string, votes: number, approved: number) {
+      this.band = name;
       this.genre = genre;
-      this.picturePath = picturePath;
+      this.votes = votes;
+      this.approved = approved;
+
     }
   }

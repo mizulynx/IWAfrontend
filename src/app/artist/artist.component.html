@@ -1,11 +1,14 @@
+<div class="w3-container"
+  style="background-color: silver; width: 50%; margin: auto; border: 5px, solid, greenyellow; margin-top: 20px; margin-bottom: 30px;">
+  <p style="text-align: center; color: rgb(70, 177, 9); font-size: 40px;"><strong>{{artist.band}}</strong></p>
+  <hr style="border-color: green;">
+  <p style="font-size: 30px;text-align: center;"><strong style="color: red;">{{artist.genre}}</strong></p>
+  <hr style="border-color: red;">
+  <div class="middle"> {{artist.votes}} </div>
+  <div *ngIf="authority == 'admin' && artist.approved == 0"><button *ngIf="authority == 'admin'" style="width: 50%;"
+      (click)="delete(artist);"> delete</button> <button *ngIf="authority == 'admin'" style="width: 50%"
+      (click)="updatePartial(artist.id , artist.band, artist.genre, artist.votes, 1);"> approve</button></div>
+  <div *ngIf="authority == 'admin' && artist.approved == 1"><button *ngIf="authority == 'admin'" style="width: 100%;"
+      (click)="delete(artist);"> delete</button> </div>
 
-
-    
-    <div class="w3-container" style="background-color: silver; width: 50%; margin: auto; border: 5px, solid, greenyellow; margin-top: 20px; margin-bottom: 30px;">
-      <p  style="text-align: center; color: rgb(70, 177, 9); font-size: 40px;"><strong>{{artist.name}}</strong></p>
-      <p  style="font-size: 30px;" ><strong>{{artist.genre}}</strong></p>
-
-      <br>
-    
-    <div class="middle"> <button class="w3-button w3-black w3-margin-bottom">View</button> </div>
-  </div>
+</div>

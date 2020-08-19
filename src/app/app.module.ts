@@ -10,11 +10,15 @@ import {RulesComponent} from './rules/rules.component';
 import {PlanComponent} from './plan/plan.component';
 import {DataComponent} from './data/data.component';
 import {LoginComponent} from './login/login.component';
-import { AdminComponent } from './admin/admin.component';
 import { RegisterComponent } from './register/register.component';
 import { httpInterceptorProviders } from './auth-interceptor';
 import { ArtistComponent } from './artist/artist.component';
 import { ArtistListComponent } from './artist-list/artist-list.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserComponent } from './user/user.component';
+import { ParticipantListComponent } from './participant-list/participant-list.component';
+import { ParticipantComponent } from './participant/participant.component';
+
 
 @NgModule({
   declarations: [
@@ -25,10 +29,14 @@ import { ArtistListComponent } from './artist-list/artist-list.component';
     PlanComponent,
     DataComponent,
     LoginComponent,
-    AdminComponent,
     RegisterComponent,
     ArtistComponent,
-    ArtistListComponent
+    ArtistListComponent,
+    UserListComponent,
+    UserComponent,
+    UserListComponent,
+    ParticipantListComponent,
+    ParticipantComponent
   ],
   imports: [
     BrowserModule,

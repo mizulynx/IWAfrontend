@@ -1,9 +1,0 @@
-
-  <ul style="list-style-type: none;">
-    <li *ngFor="let room of roomList" style="text-decoration: none; text-decoration-style: none;">
-      <div>
-      <span class="badge">number of room: {{room.id}}</span> <span>people in room:{{ room.capacity }} </span> <span>ID of user:{{room.user_id}}</span>
-      <button title="delete" (click)="delete(room)">Delete</button>
-      </div>
-    </li>
-  </ul>

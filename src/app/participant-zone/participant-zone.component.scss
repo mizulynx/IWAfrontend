@@ -40,3 +40,23 @@ p {
   display: flex;
   flex-direction: column;
 }
+
+#containerfortable::before{
+
+  width: 100%;
+
+}
+
+#containerfortable{
+  background-color: navy;
+  vertical-align: middle;
+}
+
+table{
+  margin: auto;
+}
+table, th, td{
+  text-align: center;
+  border: 1px solid navajowhite;
+border-collapse: collapse;
+}
