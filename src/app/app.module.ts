@@ -14,8 +14,7 @@ import { RegisterComponent } from './register/register.component';
 import { httpInterceptorProviders } from './auth-interceptor';
 import { ArtistComponent } from './artist/artist.component';
 import { ArtistListComponent } from './artist-list/artist-list.component';
-import { UserListComponent } from './user-list/user-list.component';
-import { UserComponent } from './user/user.component';
+
 import { ParticipantListComponent } from './participant-list/participant-list.component';
 import { ParticipantComponent } from './participant/participant.component';
 
@@ -32,9 +31,6 @@ import { ParticipantComponent } from './participant/participant.component';
     RegisterComponent,
     ArtistComponent,
     ArtistListComponent,
-    UserListComponent,
-    UserComponent,
-    UserListComponent,
     ParticipantListComponent,
     ParticipantComponent
   ],

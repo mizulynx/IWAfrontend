@@ -41,7 +41,7 @@ updatePartial(participant: Participant): Observable<any> {
 }
 
 private log(message: string) {
-  console.log('userListService: ' + message);
+  console.log('participantListService: ' + message);
 }
 
 private handleError<T>(operation = 'operation', result?: T) {

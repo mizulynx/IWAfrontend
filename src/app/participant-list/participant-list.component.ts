@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Participant } from '../participant/participant.model';
+import {Participant} from '../partcipant.model'
 import { ParticipantListService } from './participant-list.service';
-
 @Component({
   selector: 'app-participant-list',
   templateUrl: './participant-list.component.html',
@@ -9,7 +8,9 @@ import { ParticipantListService } from './participant-list.service';
   providers: [ParticipantListService]
 })
 export class ParticipantListComponent implements OnInit {
-participants: Participant[];
+
+  participants: Participant[];
+
   constructor(private participantListService: ParticipantListService) { 
     this.getParticipant();
   }
@@ -17,24 +18,7 @@ participants: Participant[];
   ngOnInit(): void {
     this.getParticipant();
   }
-
-
   getParticipant(): void{
     this.participantListService.getParticipant().subscribe(participants => this.participants = participants);
   }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

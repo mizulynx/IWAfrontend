@@ -22,7 +22,6 @@ export class ArtistListComponent implements OnInit {
 
   ngOnInit(): void {
 this.getArtist();
-    console.log(this.artists);
   }
 
   filteredGenre(): Artist[]{

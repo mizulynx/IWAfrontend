@@ -1,5 +1,7 @@
 <div class="container">
     <div class="row" style="padding-bottom: 10px;">
-   <app-participant *ngFor="let participant of participants" [participant]= "participant" ></app-participant>
+      <app-participant *ngFor="let participant of participants" [participant]="participant" [participants] = "participants"> </app-participant>
     </div>
+    
   </div>
+  

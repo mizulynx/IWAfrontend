@@ -9,9 +9,7 @@ import { StartComponent } from './start/start.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ArtistListComponent } from './artist-list/artist-list.component';
-import { UserComponent } from './user/user.component';
-import { ParticipantComponent } from './participant/participant.component';
-
+import {ParticipantListComponent} from './participant-list/participant-list.component'
 
 const routes: Routes = [
   { path: '', redirectTo: 'start', pathMatch: 'full' },
@@ -23,7 +21,7 @@ const routes: Routes = [
   { path: 'auth/signup', component: RegisterComponent },
   {path: 'participantzone', component: ParticipantZoneComponent},
   {path: 'artist', component: ArtistListComponent},
-  {path: 'participant', component: ParticipantComponent}
+  {path: 'participant', component: ParticipantListComponent}
 ];
 
 @NgModule({

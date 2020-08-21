@@ -1,6 +1,6 @@
 import { UserService } from './../user.service';
 import {Component, OnInit} from '@angular/core';
-
+import {Participant} from "../participant/participant.model"
 
 @Component({
   selector: 'app-participant-zone',
@@ -13,7 +13,6 @@ export class ParticipantZoneComponent implements OnInit {
   constructor() {
   
   }
-  choice: number = 1;
   
   ngOnInit(): void {}
     

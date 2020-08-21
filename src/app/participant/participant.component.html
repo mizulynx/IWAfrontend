@@ -1,14 +1,41 @@
+<div *ngIf="participant.username != 'admin'" style="width: 50%; margin: auto; " >
+  <div style="float: left; margin-bottom: 20px;">
+    <table style="width: 100%;     border-collapse: collapse;">
+   
 
-  <table *ngIf="participant" style="float: left; margin: 0 auto; display: block;">
-    <tr>
-      <th>Username</th>
-      <td>{{ participant.username }}</td>
-      <th>Pack</th>
-      <td> Pack</td>
-      <th>Price</th>
-      <td>600PLN</td>
-      <th>Room</th>
-      <td>{{ participant.id }}</td>
-    </tr>
-  </table>
-
+      <col width ="200px">
+      <col width ="200px">
+      <col width ="200px">
+      <col width ="200px">
+      <tr >
+        <th>Username</th>
+        
+        <th>Pack</th>
+       
+        <th>Price</th>
+       
+        <th>Room</th>
+      
+      </tr>
+      <tr>
+        <td>{{ participant.username }}</td>
+        <td *ngIf="participant.choice == 1"> Solo Pack</td>
+        <td *ngIf="participant.choice == 2"> Premium Pack</td>
+        <td *ngIf="participant.choice == 3"> Premium Sup</td>
+        <td *ngIf="participant.choice == 1"> 400 PLN</td>
+        <td *ngIf="participant.choice == 2"> 700 PLN</td>
+        <td *ngIf="participant.choice == 3"> 850 PLN</td>
+        <td>{{ participant.id }}</td>
+      </tr>
+    </table>
+  </div>
+  <div style="float: left;">
+    <select name="genre" #genre>
+      <option value= '1' type="number">Solo Pack</option>
+      <option value= '2' type="number">Premium</option>
+      <option value= '3' type="number">Premium Sup</option>
+    </select>
+    <button style="display: block; width: 126px;" (click)="updatePartial(participant.id, participant.username, genre.value, participant.votes);">make change</button>
+  
+  </div>
+</div>

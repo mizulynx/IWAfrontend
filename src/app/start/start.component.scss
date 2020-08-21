@@ -35,8 +35,18 @@ p {
   height: 70%;
 }
 
-.link-container {
+.link-container{
   justify-content: space-between;
   display: flex;
   flex-direction: column;
+  width: 20%;
+  height: 500px;
+}
+
+.link-container:first-child {
+
+  margin-left: 5%;
+}
+.link-container:not(:first-child){
+  margin-left: 2.5%;
 }
