@@ -10,6 +10,7 @@ import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ArtistListComponent } from './artist-list/artist-list.component';
 import {ParticipantListComponent} from './participant-list/participant-list.component'
+import { ArtistviewListComponent } from './artistview-list/artistview-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'start', pathMatch: 'full' },
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'auth/signup', component: RegisterComponent },
   {path: 'participantzone', component: ParticipantZoneComponent},
   {path: 'artist', component: ArtistListComponent},
-  {path: 'participant', component: ParticipantListComponent}
+  {path: 'participant', component: ParticipantListComponent},
+  {path: 'artistview', component: ArtistviewListComponent}
 ];
 
 @NgModule({

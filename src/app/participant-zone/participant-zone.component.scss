@@ -11,9 +11,11 @@
   border-left: 5px, solid, silver;
   border-right: 5px, solid, silver;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .link:hover {
+ cursor: pointer;
   background-image: linear-gradient(to bottom, #00FFFF, #01A9DB, #3D4DFF);
 }
 
@@ -41,19 +43,21 @@ p {
   flex-direction: column;
 }
 
-#containerfortable::before{
-
-  width: 100%;
-
+img{
+  height: 250px;
 }
 
 #containerfortable{
-  background-color: navy;
-  vertical-align: middle;
+  position: relative;
+  top: 150px;
+  display: flex;
+  height: 250px;
+  justify-content: center;
+
 }
 
 table{
-  margin: auto;
+  height: 250px;
 }
 table, th, td{
   text-align: center;

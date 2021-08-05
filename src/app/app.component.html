@@ -1,7 +1,7 @@
 <div class="w3-top">
-  <div class="w3-row w3-padding w3-black">
+  <div class="w3-row w3-padding w3-black" >
     <div class="w3-col s3">
-      <a [routerLink]="['/start']" class="w3-button w3-block w3-black">START</a>
+      <a [routerLink]="['/start']" class="w3-button w3-block w3-black " >START</a>
     </div>
     <div class="w3-dropdown-hover w3-col s3">
       <button class="w3-button" style="width: 100%;">KEY INFO</button>
@@ -11,15 +11,25 @@
         <a [routerLink]="['/data']" class="w3-bar-item w3-button">data</a>
       </div>
     </div>
-    <div class="w3-col s3">
-      <a *ngIf="authority === 'user'"[routerLink]="['/participantzone']" class="w3-button w3-block w3-black">PARTICIPANT ZONE</a>
-      
+
+
+
+    <div *ngIf="authority == 'user'" class="w3-dropdown-hover w3-col s3">
+      <button class="w3-button" style="width: 100%;">PARTICIPANT ZONE</button>
+    <div class="w3-dropdown-content w3-bar-block w3-border" style="width: 100%;">
+      <a [routerLink]="['/participantzone']" class="w3-bar-item w3-button">participantzone</a>
+      <a *ngIf="authority" [routerLink]="['/start']" class="w3-bar-item w3-button" (click)="logout()" style="width: 100%;">Logout</a>
     </div>
+    </div>
+
+
+
+
     <div *ngIf="authority == 'admin'" class="w3-dropdown-hover w3-col s3">
       <button class="w3-button" style="width: 100%;">Admin Zone</button>
     <div class="w3-dropdown-content w3-bar-block w3-border" style="width: 100%;">
       <a [routerLink]="['/participant']" class="w3-bar-item w3-button">Participants</a>
-      <a [routerLink]="['/artist']" class="w3-bar-item w3-button">Artists</a>
+      <a *ngIf="authority" [routerLink]="['/start']" class="w3-bar-item w3-button" (click)="logout()">Logout</a>
     </div>
     </div>
     
@@ -27,11 +37,11 @@
     <a *ngIf="!authority" [routerLink]="['/auth/login']" class="w3-button w3-block w3-black">LOGIN</a>
     <!--<a *ngIf="!authority"[routerLink]="['/participantzone']" class="w3-button w3-block w3-black">PARTICIPANT ZONE</a> -->
     </div>
-    <div class="w3-col s3">
-      <a *ngIf="!authority" [routerLink]="['/artist']" class="w3-button w3-block w3-black">ARTISTS</a>
+    <div class="w3-col s3" *ngIf="authority">
+      <a  [routerLink]="['/artist']" class="w3-button w3-block w3-black">ARTISTS</a>
     </div>
-    <div class="w3-col s3">
-      <a *ngIf="authority" [routerLink]="['/start']" class="w3-button w3-block w3-black" (click)="logout()">Logout</a>
+    <div class="w3-col s3" *ngIf="!authority">
+      <a  [routerLink]="['/artistview']" class="w3-button w3-block w3-black">ARTISTS</a>
     </div>
   </div>
 </div>
@@ -43,7 +53,7 @@
 
 
 <div class="w3-display-container w3-padding-64"
-     style="background-image: linear-gradient(to bottom, rgba(52,52,52,1), rgba(52, 52, 52, 0.2)  ); width: 100%; height: 80%;overflow: scroll;">
+     style="background-image: linear-gradient(to bottom, rgba(52,52,52,1), rgba(52, 52, 52, 0.2)  ); width: 100%; height: 80%;overflow: auto;">
   <router-outlet></router-outlet>
 </div>
 

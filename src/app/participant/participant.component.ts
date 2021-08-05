@@ -44,7 +44,11 @@ export class ParticipantComponent implements OnInit {
   updatePartial(id: number, username: string, choice: number, votes: number): void {
     id = id;
     username = username;
-    if(choice == 1){
+
+    if(choice == 0){
+      choice = 0;
+    }
+    else if(choice == 1){
       choice = 1;
     }
     else if(choice == 2){
@@ -56,10 +60,17 @@ export class ParticipantComponent implements OnInit {
     votes = votes;
     this.participantListService.updatePartial({id, username, choice, votes}).subscribe();
   console.log(choice);
+  setTimeout(function(){
+    window.location.reload();
+  }, 100)
     }
+    
     logout() {
       this.tokenStorage.signOut();
-      window.location.reload();
+      setTimeout(function(){
+        window.location.reload();
+      }, 200);
+
     }
 }
 

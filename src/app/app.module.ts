@@ -17,6 +17,8 @@ import { ArtistListComponent } from './artist-list/artist-list.component';
 
 import { ParticipantListComponent } from './participant-list/participant-list.component';
 import { ParticipantComponent } from './participant/participant.component';
+import { ArtistviewComponent } from './artistview/artistview.component';
+import { ArtistviewListComponent } from './artistview-list/artistview-list.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { ParticipantComponent } from './participant/participant.component';
     ArtistComponent,
     ArtistListComponent,
     ParticipantListComponent,
-    ParticipantComponent
+    ParticipantComponent,
+    ArtistviewComponent,
+    ArtistviewListComponent
   ],
   imports: [
     BrowserModule,

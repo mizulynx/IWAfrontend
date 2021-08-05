@@ -31,14 +31,6 @@ return this.http.post<Artist>(this.artistUrl, artist, httpOptions).pipe(
   catchError(this.handleError<Artist>('addArtist'))
   );
 }
-search(searchArt: string): Observable <Artist[]>{
-  
-  console.log(artist => artist.band);
-  console.log(searchArt);
-  console.log(artist => artist.filter(artist => artist.band === searchArt.toUpperCase()))
-
-return this.http.get<Artist[]>(this.artistUrl + '/' + searchArt);
-}
 
 delete(artist: Artist | number): Observable<Artist> {
   const id = typeof artist === 'number' ? artist : artist.id;

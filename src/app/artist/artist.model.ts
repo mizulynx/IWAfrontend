@@ -12,4 +12,5 @@ export class Artist {
       this.approved = approved;
 
     }
+    
   }

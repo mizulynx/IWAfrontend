@@ -8,27 +8,14 @@
     <hr style="border-color: red;">
     <div class="middle"> {{artist.votes}} </div>
   </div>
-  <div *ngIf="authority == 'admin' && artist.approved == 0"><button *ngIf="authority == 'admin'"
-      style="width: 50%; opacity: 1.0 !important;" (click)="delete(artist);"> delete</button> <button
-      *ngIf="authority == 'admin'" style="width: 50%; opacity: 1.0 !important;"
-      (click)="updatePartial(artist.id , artist.band, artist.genre, 10000, 1);"> approve</button></div>
 
 
 
-  <div *ngIf="authority == 'user'" style="opacity: 1.0 !important;">
-    <button *ngIf="authority == 'user' && artist.approved == 0 && current.votes != 0;" style="width: 100%;"
-      (click)="submit();">
-      votes</button>
-      <span *ngIf="current.votes == 0 && authority=='user' && artist.approved == 0"><div>You can't vote anymore you had only one vote</div></span>
-  </div>
-
+ 
   <div *ngIf="artist.approved == 1" style="opacity: 1;">
 
     <p style="text-align: center; color: rgb(70, 177, 9); font-size: 40px;"><strong>{{artist.band}}</strong></p>
     <hr style="border-color: green;">
     <p style="font-size: 30px;text-align: center;"><strong style="color: red;">{{artist.genre}}</strong></p>
     <hr style="border-color: red;">
-    <div *ngIf="authority == 'admin'"><button *ngIf="authority == 'admin'" style="width: 100%;"
-        (click)="delete(artist);"> delete</button>
-    </div>
   </div>

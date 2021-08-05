@@ -4,18 +4,7 @@
     <input type="text" placeholder="Searchbyartist" (blur)="searchArt=searchedArtist.value; " #searchedArtist>
     <button class="ui button" (click)="searchArt=searchedArtist.value; search();">Search</button>
   </div>
-  <div *ngIf="authority" class="eight wide column">
 
-    <div  class="ui action input" style="display: flex;">
-      <input type="text" placeholder="type band name to create" #band>
-      <select #genre>
-        <option value="Rock">Rock</option>
-        <option value="Pop">Pop</option>
-        <option value="Electro">Electro</option>
-      </select>
-      <button class="ui button" (click)="add(band.value, genre.value, 0, 0);">Create</button>
-    </div>
-  </div>
   <div style="display: flex;">
     <button class="ui button" (click)="sort = 1;">asc</button>
     <button class="ui button" (click)="sort = 2;">des</button>
@@ -26,22 +15,21 @@
     <button class="ui inverted purple basic button" (click)="filteredValue='Pop';">Pop</button>
     <button class="ui inverted pink basic button" (click)="filteredValue='Electro';">Electro</button>
     <button class="ui button" (click)="filteredValue=null;">All bands</button>
-    {{searchedArtist.value}}
   </div>
 </div>
 <div class="container">
-  <div class="row" style="padding-bottom: 50px;" *ngIf="sort == 2 && current" >
+  <div class="row" style="padding-bottom: 50px;" *ngIf="sort == 2" >
     <app-artist *ngFor="let artist of sortedArtists2()" [artist]="artist" [artists]="artists"
-      [filteredValue]="filteredValue" [searchArt]="searchArt" [current] = "current"> </app-artist>
+      [filteredValue]="filteredValue" [searchArt]="searchArt"> </app-artist>
   </div>
 
-  <div class="row" style="padding-bottom: 50px;" *ngIf="sort == 1 && current" >
+  <div class="row" style="padding-bottom: 50px;" *ngIf="sort == 1" >
     <app-artist *ngFor="let artist of sortedArtists()" [artist]="artist" [artists]="artists"
-      [filteredValue]="filteredValue" [searchArt]="searchArt" [current] = "current"> </app-artist>
+      [filteredValue]="filteredValue" [searchArt]="searchArt"> </app-artist>
   </div>
 
-  <div class="row" style="padding-bottom: 50px;" *ngIf="sort == 0 && current" >
+  <div class="row" style="padding-bottom: 50px;" *ngIf="sort == 0 " >
     <app-artist *ngFor="let artist of artists" [artist]="artist" [artists]="artists"
-      [filteredValue]="filteredValue" [searchArt]="searchArt" [participants]= "participants" [current] = "current"> </app-artist>
+      [filteredValue]="filteredValue" [searchArt]="searchArt"> </app-artist>
   </div>
 </div>
